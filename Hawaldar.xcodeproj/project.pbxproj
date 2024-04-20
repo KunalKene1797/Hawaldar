@@ -7,18 +7,58 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		750101F92BD0B5E2003AAD6A /* SwiftOTP in Frameworks */ = {isa = PBXBuildFile; productRef = 750101F82BD0B5E2003AAD6A /* SwiftOTP */; };
 		751591862BBB42E900279650 /* HawaldarApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751591852BBB42E900279650 /* HawaldarApp.swift */; };
-		751591882BBB42E900279650 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751591872BBB42E900279650 /* ContentView.swift */; };
+		751591882BBB42E900279650 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 751591872BBB42E900279650 /* MainView.swift */; };
 		7515918A2BBB42EA00279650 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 751591892BBB42EA00279650 /* Assets.xcassets */; };
 		7515918D2BBB42EA00279650 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7515918C2BBB42EA00279650 /* Preview Assets.xcassets */; };
+		7538D0A22BC8AE5600A24F80 /* FASwiftUI in Frameworks */ = {isa = PBXBuildFile; productRef = 7538D0A12BC8AE5600A24F80 /* FASwiftUI */; };
+		7538D0B22BC8AED300A24F80 /* categories.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A32BC8AED300A24F80 /* categories.yml */; };
+		7538D0B32BC8AED300A24F80 /* icon-families.json in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A42BC8AED300A24F80 /* icon-families.json */; };
+		7538D0B42BC8AED300A24F80 /* icon-families.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A52BC8AED300A24F80 /* icon-families.yml */; };
+		7538D0B52BC8AED300A24F80 /* icons.json in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A62BC8AED300A24F80 /* icons.json */; };
+		7538D0B62BC8AED300A24F80 /* icons.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A72BC8AED300A24F80 /* icons.yml */; };
+		7538D0B72BC8AED300A24F80 /* shims.json in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A82BC8AED300A24F80 /* shims.json */; };
+		7538D0B82BC8AED300A24F80 /* shims.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0A92BC8AED300A24F80 /* shims.yml */; };
+		7538D0B92BC8AED300A24F80 /* sponsors.yml in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0AA2BC8AED300A24F80 /* sponsors.yml */; };
+		7538D0BA2BC8AED300A24F80 /* Font Awesome 6 Brands-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0AC2BC8AED300A24F80 /* Font Awesome 6 Brands-Regular-400.otf */; };
+		7538D0BB2BC8AED300A24F80 /* Font Awesome 6 Free-Regular-400.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0AD2BC8AED300A24F80 /* Font Awesome 6 Free-Regular-400.otf */; };
+		7538D0BC2BC8AED300A24F80 /* Font Awesome 6 Free-Solid-900.otf in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0AE2BC8AED300A24F80 /* Font Awesome 6 Free-Solid-900.otf */; };
+		7538D0BD2BC8AED300A24F80 /* LICENSE.txt in Resources */ = {isa = PBXBuildFile; fileRef = 7538D0B02BC8AED300A24F80 /* LICENSE.txt */; };
+		757873AB2BCB907500A8A290 /* HawaldarData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 757873AA2BCB907500A8A290 /* HawaldarData.swift */; };
+		758799042BCA556700A7AF17 /* NewAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 758799032BCA556700A7AF17 /* NewAccountView.swift */; };
+		758799072BCB20A200A7AF17 /* CodeScanner in Frameworks */ = {isa = PBXBuildFile; productRef = 758799062BCB20A200A7AF17 /* CodeScanner */; };
+		7595D9AB2BC1EC86006CBCE3 /* AuthenticatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */; };
+		7595D9AD2BC1ECBA006CBCE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */; };
+		7595D9B02BC1ED77006CBCE3 /* AuthCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */; };
+		75FF35C12BD34FDB004CF6FB /* TokenGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		751591822BBB42E900279650 /* Hawaldar.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Hawaldar.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		751591852BBB42E900279650 /* HawaldarApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawaldarApp.swift; sourceTree = "<group>"; };
-		751591872BBB42E900279650 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		751591872BBB42E900279650 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
 		751591892BBB42EA00279650 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7515918C2BBB42EA00279650 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		7538D0A32BC8AED300A24F80 /* categories.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = categories.yml; sourceTree = "<group>"; };
+		7538D0A42BC8AED300A24F80 /* icon-families.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = "icon-families.json"; sourceTree = "<group>"; };
+		7538D0A52BC8AED300A24F80 /* icon-families.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = "icon-families.yml"; sourceTree = "<group>"; };
+		7538D0A62BC8AED300A24F80 /* icons.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = icons.json; sourceTree = "<group>"; };
+		7538D0A72BC8AED300A24F80 /* icons.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = icons.yml; sourceTree = "<group>"; };
+		7538D0A82BC8AED300A24F80 /* shims.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = shims.json; sourceTree = "<group>"; };
+		7538D0A92BC8AED300A24F80 /* shims.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = shims.yml; sourceTree = "<group>"; };
+		7538D0AA2BC8AED300A24F80 /* sponsors.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = sponsors.yml; sourceTree = "<group>"; };
+		7538D0AC2BC8AED300A24F80 /* Font Awesome 6 Brands-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Brands-Regular-400.otf"; sourceTree = "<group>"; };
+		7538D0AD2BC8AED300A24F80 /* Font Awesome 6 Free-Regular-400.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Regular-400.otf"; sourceTree = "<group>"; };
+		7538D0AE2BC8AED300A24F80 /* Font Awesome 6 Free-Solid-900.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Font Awesome 6 Free-Solid-900.otf"; sourceTree = "<group>"; };
+		7538D0B02BC8AED300A24F80 /* LICENSE.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE.txt; sourceTree = "<group>"; };
+		7538D0BE2BC8AF5D00A24F80 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		757873AA2BCB907500A8A290 /* HawaldarData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HawaldarData.swift; sourceTree = "<group>"; };
+		758799032BCA556700A7AF17 /* NewAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewAccountView.swift; sourceTree = "<group>"; };
+		7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorView.swift; sourceTree = "<group>"; };
+		7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeView.swift; sourceTree = "<group>"; };
+		75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -26,6 +66,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				758799072BCB20A200A7AF17 /* CodeScanner in Frameworks */,
+				750101F92BD0B5E2003AAD6A /* SwiftOTP in Frameworks */,
+				7538D0A22BC8AE5600A24F80 /* FASwiftUI in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -51,8 +94,13 @@
 		751591842BBB42E900279650 /* Hawaldar */ = {
 			isa = PBXGroup;
 			children = (
+				75FF35BF2BD34FAF004CF6FB /* ViewModel */,
+				757873A92BCB906200A8A290 /* Data */,
+				7538D0BE2BC8AF5D00A24F80 /* Info.plist */,
+				7538D0B12BC8AED300A24F80 /* FontAwesome */,
+				7595D9A92BC1EC54006CBCE3 /* Views */,
 				751591852BBB42E900279650 /* HawaldarApp.swift */,
-				751591872BBB42E900279650 /* ContentView.swift */,
+				751591872BBB42E900279650 /* MainView.swift */,
 				751591892BBB42EA00279650 /* Assets.xcassets */,
 				7515918B2BBB42EA00279650 /* Preview Content */,
 			);
@@ -65,6 +113,68 @@
 				7515918C2BBB42EA00279650 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7538D0AB2BC8AED300A24F80 /* metadata */ = {
+			isa = PBXGroup;
+			children = (
+				7538D0A32BC8AED300A24F80 /* categories.yml */,
+				7538D0A42BC8AED300A24F80 /* icon-families.json */,
+				7538D0A52BC8AED300A24F80 /* icon-families.yml */,
+				7538D0A62BC8AED300A24F80 /* icons.json */,
+				7538D0A72BC8AED300A24F80 /* icons.yml */,
+				7538D0A82BC8AED300A24F80 /* shims.json */,
+				7538D0A92BC8AED300A24F80 /* shims.yml */,
+				7538D0AA2BC8AED300A24F80 /* sponsors.yml */,
+			);
+			path = metadata;
+			sourceTree = "<group>";
+		};
+		7538D0AF2BC8AED300A24F80 /* otfs */ = {
+			isa = PBXGroup;
+			children = (
+				7538D0AC2BC8AED300A24F80 /* Font Awesome 6 Brands-Regular-400.otf */,
+				7538D0AD2BC8AED300A24F80 /* Font Awesome 6 Free-Regular-400.otf */,
+				7538D0AE2BC8AED300A24F80 /* Font Awesome 6 Free-Solid-900.otf */,
+			);
+			path = otfs;
+			sourceTree = "<group>";
+		};
+		7538D0B12BC8AED300A24F80 /* FontAwesome */ = {
+			isa = PBXGroup;
+			children = (
+				7538D0AB2BC8AED300A24F80 /* metadata */,
+				7538D0AF2BC8AED300A24F80 /* otfs */,
+				7538D0B02BC8AED300A24F80 /* LICENSE.txt */,
+			);
+			path = FontAwesome;
+			sourceTree = "<group>";
+		};
+		757873A92BCB906200A8A290 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				757873AA2BCB907500A8A290 /* HawaldarData.swift */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
+		7595D9A92BC1EC54006CBCE3 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */,
+				7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */,
+				7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */,
+				758799032BCA556700A7AF17 /* NewAccountView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		75FF35BF2BD34FAF004CF6FB /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -83,6 +193,11 @@
 			dependencies = (
 			);
 			name = Hawaldar;
+			packageProductDependencies = (
+				7538D0A12BC8AE5600A24F80 /* FASwiftUI */,
+				758799062BCB20A200A7AF17 /* CodeScanner */,
+				750101F82BD0B5E2003AAD6A /* SwiftOTP */,
+			);
 			productName = Hawaldar;
 			productReference = 751591822BBB42E900279650 /* Hawaldar.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +226,11 @@
 				Base,
 			);
 			mainGroup = 751591792BBB42E900279650;
+			packageReferences = (
+				7538D0A02BC8AE5600A24F80 /* XCRemoteSwiftPackageReference "FASwiftUI" */,
+				758799052BCB20A200A7AF17 /* XCRemoteSwiftPackageReference "CodeScanner" */,
+				750101F72BD0B5E1003AAD6A /* XCRemoteSwiftPackageReference "SwiftOTP" */,
+			);
 			productRefGroup = 751591832BBB42E900279650 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -125,7 +245,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7538D0B52BC8AED300A24F80 /* icons.json in Resources */,
+				7538D0B82BC8AED300A24F80 /* shims.yml in Resources */,
+				7538D0B62BC8AED300A24F80 /* icons.yml in Resources */,
+				7538D0B92BC8AED300A24F80 /* sponsors.yml in Resources */,
+				7538D0B22BC8AED300A24F80 /* categories.yml in Resources */,
+				7538D0B42BC8AED300A24F80 /* icon-families.yml in Resources */,
+				7538D0BD2BC8AED300A24F80 /* LICENSE.txt in Resources */,
+				7538D0BB2BC8AED300A24F80 /* Font Awesome 6 Free-Regular-400.otf in Resources */,
 				7515918D2BBB42EA00279650 /* Preview Assets.xcassets in Resources */,
+				7538D0BC2BC8AED300A24F80 /* Font Awesome 6 Free-Solid-900.otf in Resources */,
+				7538D0BA2BC8AED300A24F80 /* Font Awesome 6 Brands-Regular-400.otf in Resources */,
+				7538D0B32BC8AED300A24F80 /* icon-families.json in Resources */,
+				7538D0B72BC8AED300A24F80 /* shims.json in Resources */,
 				7515918A2BBB42EA00279650 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -137,8 +269,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				751591882BBB42E900279650 /* ContentView.swift in Sources */,
+				7595D9AB2BC1EC86006CBCE3 /* AuthenticatorView.swift in Sources */,
+				7595D9AD2BC1ECBA006CBCE3 /* SettingsView.swift in Sources */,
+				751591882BBB42E900279650 /* MainView.swift in Sources */,
+				7595D9B02BC1ED77006CBCE3 /* AuthCodeView.swift in Sources */,
+				758799042BCA556700A7AF17 /* NewAccountView.swift in Sources */,
+				757873AB2BCB907500A8A290 /* HawaldarData.swift in Sources */,
 				751591862BBB42E900279650 /* HawaldarApp.swift in Sources */,
+				75FF35C12BD34FDB004CF6FB /* TokenGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -275,6 +413,7 @@
 				DEVELOPMENT_TEAM = C49YHZ979V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hawaldar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +443,7 @@
 				DEVELOPMENT_TEAM = C49YHZ979V;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Hawaldar/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -344,6 +484,51 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		750101F72BD0B5E1003AAD6A /* XCRemoteSwiftPackageReference "SwiftOTP" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/lachlanbell/SwiftOTP";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.2;
+			};
+		};
+		7538D0A02BC8AE5600A24F80 /* XCRemoteSwiftPackageReference "FASwiftUI" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/mattmaddux/FASwiftUI.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.1.0;
+			};
+		};
+		758799052BCB20A200A7AF17 /* XCRemoteSwiftPackageReference "CodeScanner" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/twostraws/CodeScanner";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.4.1;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		750101F82BD0B5E2003AAD6A /* SwiftOTP */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 750101F72BD0B5E1003AAD6A /* XCRemoteSwiftPackageReference "SwiftOTP" */;
+			productName = SwiftOTP;
+		};
+		7538D0A12BC8AE5600A24F80 /* FASwiftUI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 7538D0A02BC8AE5600A24F80 /* XCRemoteSwiftPackageReference "FASwiftUI" */;
+			productName = FASwiftUI;
+		};
+		758799062BCB20A200A7AF17 /* CodeScanner */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 758799052BCB20A200A7AF17 /* XCRemoteSwiftPackageReference "CodeScanner" */;
+			productName = CodeScanner;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 7515917A2BBB42E900279650 /* Project object */;
 }

@@ -6,12 +6,15 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct HawaldarApp: App {
+    @AppStorage("isDarkMode") private var isDarkMode: Bool = true
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            MainView().preferredColorScheme(isDarkMode ? .dark : .light)
         }
+        .modelContainer(for: AccountData.self)
     }
 }
