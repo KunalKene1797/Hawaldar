@@ -11,7 +11,7 @@ import SwiftData
 @Model
 class AccountData{
     var accountName: String
-    var privateKey: String
+    @Attribute(.unique) var privateKey: String
     var accountIcon: String
     var keyType: String
     var tokenCode: String

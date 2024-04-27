@@ -9,42 +9,22 @@ import SwiftUI
 import SwiftData
 import SwiftOTP
 
-class Toast{
-    @Published var showToast = false
-}
-
-class CodeReset: ObservableObject {
-    @Published var timer: Timer?
-    @Published var refresh: Bool = false
-
-    init(){
-        timer = Timer.scheduledTimer(withTimeInterval: 30, repeats: true, block: { Timer in
-            self.refresh.toggle()
-        })
-    }
-    
-    deinit {
-        timer?.invalidate()
-    }
-}
-
 struct AuthenticatorView: View {
-    @State var showToast = Toast().showToast
     @State private var animationCount = 1
     @State private var showCamera = false
     @State private var showAddView = false
     @Query private var accountData: [AccountData]
-    @StateObject var codeReset = CodeReset()
-        
+    @StateObject var progressManager = ProgressManager()
+    
     var body: some View {
         NavigationView{
             ScrollView{
                 VStack{
-                    if(codeReset.refresh){
+                    if(progressManager.refresh){
                         // Nothing
                     }
                     ForEach(accountData){item in
-                        AuthCodeView(accountData: item, authCode: TOTP(secret: base32DecodeToData(item.privateKey) ?? Data(hex: "1"))?.generate(time: Date.now) ?? "111111")
+                        AuthCodeView(accountData: item, authCode: TOTP(secret: base32DecodeToData(item.privateKey) ?? Data(hex: "1"))?.generate(time: Date.now) ?? "111111", progressManager: progressManager)
                         if(item != accountData.last){
                             Divider().padding(.horizontal,20)
                         }
@@ -90,6 +70,44 @@ struct AuthenticatorView: View {
         
     }
 }
+
+class ProgressManager: ObservableObject {
+    @Published var progress: CGFloat
+    @Published var refresh: Bool = false
+    private var timer: Timer?
+    
+    init(progress: CGFloat = currentTimeAsFloat()) {
+        self.progress = progress
+        timer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true) { (timer) in
+            self.progress += 0.0333333
+            if self.progress >= 1.0{
+                self.progress = currentTimeAsFloat()
+                self.refresh.toggle()
+            }
+        }
+    }
+    
+    deinit {
+        timer?.invalidate()
+    }
+}
+
+func currentTimeAsFloat() -> CGFloat {
+  let calendar = Calendar.current
+  let now = Date()
+  let components = calendar.dateComponents([.minute, .second], from: now)
+
+  guard let minute = components.minute, let second = components.second else { return 0.0 }
+
+  // Calculate total seconds elapsed in the current minute
+  let elapsedSeconds = CGFloat(minute) * 60.0 + CGFloat(second)
+
+  // Normalize to value between 0.0 and 1.0 within a 30-second cycle
+  let normalizedTime = fmod(elapsedSeconds, 30.0) / 30.0
+
+  return normalizedTime
+}
+
 
 #Preview {
     AuthenticatorView()

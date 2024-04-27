@@ -10,24 +10,6 @@ import FASwiftUI
 import UniformTypeIdentifiers
 import SwiftData
 
-class ProgressManager: ObservableObject {
-    @Published var progress: CGFloat = 0.0
-    private var timer: Timer?
-    
-    init() {
-        timer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { (timer) in
-            self.progress += 0.0032
-            if self.progress >= 1.0 {
-                // Refresh
-            }
-        }
-    }
-    
-    deinit {
-        timer?.invalidate()
-    }
-}
-
 struct AuthCodeView: View {
     
     var accountData: AccountData
@@ -43,10 +25,10 @@ struct AuthCodeView: View {
     
     @ObservedObject var progressManager: ProgressManager
     
-    init(accountData: AccountData, authCode: String) {
+    init(accountData: AccountData, authCode: String, progressManager: ProgressManager) {
         self.accountData = accountData
         self.authCode = authCode
-        self.progressManager = ProgressManager()
+        self.progressManager = progressManager
     }
     var body: some View {
         
@@ -149,7 +131,9 @@ struct AuthCodeView: View {
     let container = try! ModelContainer(for: AccountData.self, configurations: config)
     
     let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple", accountIcon: "apple", keyType: "test", tokenCode: "111111")
+    
+    let progressManager = ProgressManager()
             
-    return AuthCodeView(accountData: sampleAccountData, authCode: "123456")
+    return AuthCodeView(accountData: sampleAccountData, authCode: "123456", progressManager: progressManager)
         .modelContainer(container)
 }

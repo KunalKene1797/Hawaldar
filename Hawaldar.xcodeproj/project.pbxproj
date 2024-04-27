@@ -31,7 +31,6 @@
 		7595D9AB2BC1EC86006CBCE3 /* AuthenticatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */; };
 		7595D9AD2BC1ECBA006CBCE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */; };
 		7595D9B02BC1ED77006CBCE3 /* AuthCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */; };
-		75FF35C12BD34FDB004CF6FB /* TokenGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,7 +57,6 @@
 		7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorView.swift; sourceTree = "<group>"; };
 		7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeView.swift; sourceTree = "<group>"; };
-		75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TokenGenerator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,7 +92,6 @@
 		751591842BBB42E900279650 /* Hawaldar */ = {
 			isa = PBXGroup;
 			children = (
-				75FF35BF2BD34FAF004CF6FB /* ViewModel */,
 				757873A92BCB906200A8A290 /* Data */,
 				7538D0BE2BC8AF5D00A24F80 /* Info.plist */,
 				7538D0B12BC8AED300A24F80 /* FontAwesome */,
@@ -167,14 +164,6 @@
 				758799032BCA556700A7AF17 /* NewAccountView.swift */,
 			);
 			path = Views;
-			sourceTree = "<group>";
-		};
-		75FF35BF2BD34FAF004CF6FB /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				75FF35C02BD34FDB004CF6FB /* TokenGenerator.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -276,7 +265,6 @@
 				758799042BCA556700A7AF17 /* NewAccountView.swift in Sources */,
 				757873AB2BCB907500A8A290 /* HawaldarData.swift in Sources */,
 				751591862BBB42E900279650 /* HawaldarApp.swift in Sources */,
-				75FF35C12BD34FDB004CF6FB /* TokenGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
