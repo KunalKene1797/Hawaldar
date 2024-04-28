@@ -52,7 +52,7 @@ struct EditAccountView: View {
 #Preview {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: AccountData.self, configurations: config)
-    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple", accountIcon: "apple", keyType: "test", tokenCode: "111111", identifier: "kunal.kene@icloud.com")
+    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple",identifier: "kunal.kene@icloud.com", accountIcon: "apple", keyType: "test", tokenCode: "111111", isPinned: 0)
     return EditAccountView(accountData: sampleAccountData)
         .modelContainer(container)
 }

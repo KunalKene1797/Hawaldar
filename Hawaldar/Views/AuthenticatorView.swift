@@ -13,7 +13,7 @@ struct AuthenticatorView: View {
     @State private var animationCount = 1
     @State private var showCamera = false
     @State private var showAddView = false
-    @Query private var accountData: [AccountData]
+    @Query(sort: \AccountData.isPinned, order: .reverse) private var accountData: [AccountData]
     @StateObject var progressManager = ProgressManager()
     
     var body: some View {

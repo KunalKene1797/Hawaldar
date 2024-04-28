@@ -103,7 +103,7 @@ struct NewAccountView: View {
                 }else{
                     UINotificationFeedbackGenerator().notificationOccurred(.success)
 
-                    let newAccountData = AccountData(accountName: accountName, privateKey: privateKey, accountIcon: accountIcon, keyType: selectedKeyType, tokenCode: "111111", identifier: identifier)
+                    let newAccountData = AccountData(accountName: accountName, privateKey: privateKey, identifier: identifier, accountIcon: accountIcon, keyType: selectedKeyType, tokenCode: "111111", isPinned: 0)
                     context.insert(newAccountData)
                     dismiss()
                 }

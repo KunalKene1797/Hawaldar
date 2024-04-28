@@ -45,7 +45,6 @@ struct AuthCodeView: View {
                 
                 
                 VStack{
-                    
                     Text(accountData.accountName)
                         .font(.title3)
                         .fontWeight(.regular)
@@ -114,6 +113,22 @@ struct AuthCodeView: View {
                 .scaleEffect(CGSize(width: authCodeScaleVal, height: authCodeScaleVal))
             
         }.contextMenu(ContextMenu(menuItems: {
+            if(accountData.isPinned == 0){
+                Button{
+                    accountData.isPinned = 1
+                }label:{
+                    Image(systemName: "pin")
+                    Text("Pin")
+                }
+            }else{
+                Button{
+                    accountData.isPinned = 0
+                }label:{
+                    Image(systemName: "pin.slash")
+                    Text("Unpin")
+                }
+            }
+            
             Button{
                 accountDataToEdit = accountData
             }label:{
@@ -146,7 +161,7 @@ struct AuthCodeView: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: AccountData.self, configurations: config)
     
-    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple", accountIcon: "apple", keyType: "test", tokenCode: "111111", identifier: "kunal.kene@icloud.com")
+    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple",identifier: "kunal.kene@icloud.com", accountIcon: "apple", keyType: "test", tokenCode: "111111", isPinned: 0)
     
     let progressManager = ProgressManager()
             
