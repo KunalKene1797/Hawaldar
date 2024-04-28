@@ -12,15 +12,17 @@ import SwiftData
 class AccountData{
     var accountName: String
     @Attribute(.unique) var privateKey: String
+    var identifier: String
     var accountIcon: String
     var keyType: String
     var tokenCode: String
     
-    init(accountName: String, privateKey: String, accountIcon: String, keyType: String, tokenCode: String) {
+    init(accountName: String, privateKey: String, accountIcon: String, keyType: String, tokenCode: String, identifier: String) {
         self.accountName = accountName
         self.privateKey = privateKey
         self.accountIcon = accountIcon
         self.keyType = keyType
         self.tokenCode = tokenCode
+        self.identifier = identifier
     }
 }

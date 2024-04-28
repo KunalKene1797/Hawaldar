@@ -31,6 +31,7 @@
 		7595D9AB2BC1EC86006CBCE3 /* AuthenticatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */; };
 		7595D9AD2BC1ECBA006CBCE3 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */; };
 		7595D9B02BC1ED77006CBCE3 /* AuthCodeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */; };
+		75C363842BDDADAC0071CAFA /* EditAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 75C363832BDDADAC0071CAFA /* EditAccountView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -57,6 +58,7 @@
 		7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticatorView.swift; sourceTree = "<group>"; };
 		7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		7595D9AF2BC1ED77006CBCE3 /* AuthCodeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthCodeView.swift; sourceTree = "<group>"; };
+		75C363832BDDADAC0071CAFA /* EditAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditAccountView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 				7595D9AA2BC1EC86006CBCE3 /* AuthenticatorView.swift */,
 				7595D9AC2BC1ECBA006CBCE3 /* SettingsView.swift */,
 				758799032BCA556700A7AF17 /* NewAccountView.swift */,
+				75C363832BDDADAC0071CAFA /* EditAccountView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 				7595D9B02BC1ED77006CBCE3 /* AuthCodeView.swift in Sources */,
 				758799042BCA556700A7AF17 /* NewAccountView.swift in Sources */,
 				757873AB2BCB907500A8A290 /* HawaldarData.swift in Sources */,
+				75C363842BDDADAC0071CAFA /* EditAccountView.swift in Sources */,
 				751591862BBB42E900279650 /* HawaldarApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

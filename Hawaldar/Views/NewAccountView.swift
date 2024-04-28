@@ -12,30 +12,45 @@ import Combine
 import SwiftData
 
 
+func getValueFromUrl(urlString: String, paramName: String) -> String? {
+    guard let url = URL(string: urlString) else { return nil }
+    let urlComponents = URLComponents(string: url.absoluteString)
+    guard let queryItems = urlComponents?.queryItems else { return nil }
+    return queryItems.first(where: { $0.name == paramName })?.value
+}
+
+
 struct NewAccountView: View {
     @State private var accountName: String = ""
     @State private var privateKey: String = ""
+    @State private var identifier: String = ""
     @State private var keyTypes = ["Time Based", "Counter Based"]
     @State private var selectedKeyType: String = "Time Based"
     @State private var accountIcon: String = "apple"
+    
     
     @State private var isShowingScanner:Bool
     
     @Environment(\.modelContext) private var context
     @Environment(\.dismiss) var dismiss
-    @Query private var currentAccountData: [AccountData]
     
+    // Variables
+    private var navigationTitle: String = "Add New 2FA Account"
+    private var buttonTitle: String = "Add Account"
+    private var frameHeight: CGFloat = 320
     
-    
-    init(isShowingScanner: Bool = false, showAddView: Bool = false) {
+    init(isShowingScanner: Bool = false) {
         self.isShowingScanner = isShowingScanner
     }
-        
+    
     var body: some View {
         VStack{
-            Text("Add New 2FA Account").padding(.vertical, 20).fontWeight(.bold)
+            Text(navigationTitle).padding(.vertical, 20).fontWeight(.bold)
             FAText(iconName: accountIcon, size: 60).padding(0)
             Form(){
+                Section(footer: Text("Icons from Font Awesome")) {
+                    TextField("Account Icon", text: $accountIcon)
+                }
                 TextField("Account Name", text: $accountName)
                     .onChange(of: accountName){
                         if(!accountName.isEmpty){
@@ -44,14 +59,12 @@ struct NewAccountView: View {
                             accountIcon = "apple"
                         }
                     }
+                TextField("Email / Identifier (Optional)", text: $identifier)
+                
                 HStack{
                     TextField("Private Key", text: $privateKey)
-                    Button(){
-                        isShowingScanner.toggle()
-                    }label: {
-                        Image(systemName: "camera").resizable().aspectRatio(contentMode: .fit).frame(height: 20)
-                    }
-                }.sheet(isPresented: $isShowingScanner, content: {
+                }
+                .sheet(isPresented: $isShowingScanner, content: {
                     NavigationView{
                         ZStack{
                             CodeScannerView(codeTypes: [.qr]){
@@ -59,7 +72,9 @@ struct NewAccountView: View {
                                 case .success(let result):
                                     print("Found code: \(result.string)")
                                     isShowingScanner = false
-                                    privateKey = result.string
+                                    accountName = String(URL(string: result.string)!.path().dropFirst())
+                                    privateKey = getValueFromUrl(urlString: result.string, paramName: "secret") ?? getValueFromUrl(urlString: result.string, paramName: "data") ?? privateKey
+                                    
                                 case .failure(let error):
                                     print(error.localizedDescription)
                                     isShowingScanner = false
@@ -73,7 +88,6 @@ struct NewAccountView: View {
                     .presentationDetents([.medium])
                 })
                 
-                
                 Picker("Key Type", selection: $selectedKeyType){
                     ForEach(keyTypes, id:\.self){
                         Text($0)
@@ -81,12 +95,19 @@ struct NewAccountView: View {
                 }
             }
             .scrollContentBackground(.hidden)
-            .frame(height: 200)
+            .frame(height: frameHeight)
             .scrollDisabled(true)
-            Button("Add Account"){
-                let newAccountData = AccountData(accountName: accountName, privateKey: privateKey, accountIcon: accountIcon, keyType: selectedKeyType, tokenCode: "111111")
-                context.insert(newAccountData)
-                dismiss()
+            Button(buttonTitle){
+                if(privateKey==""){
+                    UINotificationFeedbackGenerator().notificationOccurred(.error)
+                }else{
+                    UINotificationFeedbackGenerator().notificationOccurred(.success)
+
+                    let newAccountData = AccountData(accountName: accountName, privateKey: privateKey, accountIcon: accountIcon, keyType: selectedKeyType, tokenCode: "111111", identifier: identifier)
+                    context.insert(newAccountData)
+                    dismiss()
+                }
+                
             }.padding()
         }
     }

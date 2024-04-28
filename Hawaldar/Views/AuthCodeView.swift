@@ -15,7 +15,8 @@ struct AuthCodeView: View {
     var accountData: AccountData
     @Environment(\.modelContext) private var context
     var authCode: String
-    @State var showToast = false
+    @State var editAccountView = false
+    @State private var accountDataToEdit: AccountData?
 
     private var circleSize = CGFloat(20)
 
@@ -44,19 +45,21 @@ struct AuthCodeView: View {
                 
                 
                 VStack{
+                    
                     Text(accountData.accountName)
                         .font(.title3)
                         .fontWeight(.regular)
                         .frame(maxWidth: .infinity, alignment: .leading)
                     
+                    if(accountData.identifier != ""){
+                        Text(verbatim:accountData.identifier)
+                            .font(.footnote)
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .leading)
+                            .tint(Color.primary).opacity(0.6)
+                            .fontWeight(.semibold).disabled(true)
+                    }
                     
-                    
-                    Text(verbatim:"kunalkene1797@gmail.com")
-                        .font(.footnote)
-                        .lineLimit(1)
-                        .frame(maxWidth: .infinity, alignment: .leading)
-                        .tint(Color.primary).opacity(0.6)
-                        .fontWeight(.semibold).disabled(true)
                     
                     
                     
@@ -112,13 +115,26 @@ struct AuthCodeView: View {
             
         }.contextMenu(ContextMenu(menuItems: {
             Button{
+                accountDataToEdit = accountData
+            }label:{
+                Image(systemName:"pencil")
+                Text("Edit")
+            }
+            Button{
                 context.delete(accountData)
             }label:{
-                Image(systemName: "trash")
-                Text("Delete Item")
-                
+                Image(systemName: "trash").foregroundColor(.red)
+                Text("Delete Item").foregroundColor(.red)
             }
-        }))
+            
+        })).sheet(item: $accountDataToEdit) { accountData in
+                NavigationView{
+                    ZStack{
+                        EditAccountView(accountData: accountData)
+                    }
+                }
+                .presentationDetents([.height(440)]).presentationDragIndicator(.visible)
+            }
         
     }
     
@@ -130,7 +146,7 @@ struct AuthCodeView: View {
     let config = ModelConfiguration(isStoredInMemoryOnly: true)
     let container = try! ModelContainer(for: AccountData.self, configurations: config)
     
-    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple", accountIcon: "apple", keyType: "test", tokenCode: "111111")
+    let sampleAccountData = AccountData(accountName: "Apple", privateKey: "apple", accountIcon: "apple", keyType: "test", tokenCode: "111111", identifier: "kunal.kene@icloud.com")
     
     let progressManager = ProgressManager()
             

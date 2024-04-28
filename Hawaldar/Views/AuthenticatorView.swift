@@ -41,7 +41,7 @@ struct AuthenticatorView: View {
                     }.sheet(isPresented: $showCamera){
                         NavigationView{
                             NewAccountView(isShowingScanner: true)
-                        }.presentationDetents([.height(450)]).presentationDragIndicator(.visible)
+                        }.presentationDetents([.height(460)]).presentationDragIndicator(.visible)
                     }
                     
                     Button{
@@ -59,7 +59,7 @@ struct AuthenticatorView: View {
                     }.sheet(isPresented: $showAddView){
                         NavigationView{
                             NewAccountView()
-                        }.presentationDetents([.height(450)]).presentationDragIndicator(.visible)
+                        }.presentationDetents([.height(550)]).presentationDragIndicator(.visible)
                     }
                     
                 })
